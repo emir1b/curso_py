@@ -1,7 +1,11 @@
-const bt= document.querySelector(".bt")
-const root=document.querySelector(".root")
-bt.addEventListener("click", () => {
-    let p = document.createElement("p")
-    p.textContent="click"
-    root.appendChild(p)
-})
+const d = document
+const $= s=> d.querySelector(s)
+// definir variables
+const form=$(".form")
+form.onsubmit=(ev)=>{
+
+    ev.preventDefault()
+    const formdata= new FormData(ev.target)
+    console.log(formdata);
+    
+}
