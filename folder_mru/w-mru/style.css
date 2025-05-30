@@ -1,14 +1,9 @@
-h1 {
-        color: rgb(1, 165, 23);
-    }
-    label {
-        color: rgb(0, 0, 0);
-    }
-
-    .m {
-        color: rgb(7, 7, 7);
-        font-family: Arial, Helvetica, sans-serif, "Helvetica Neue", Helvetica, sans-serif;
-    }
-    .bt {
-        color: rgb(209, 14, 14);
-    }
+.form-label {
+    color: rgb(250, 1, 1);
+}
+ .form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+ }
