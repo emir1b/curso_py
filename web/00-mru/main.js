@@ -1,22 +1,16 @@
-//seleccionar el form
-const form=document.querySelector("form")
-//metohod onsubmit obtener los datos del formulario 
-
+const d = document
+const $= s=> d.querySelector(s)
+// definir variables
+const form=$(".form")
+const distancia =$(".par")
+console.log(distancia)
 form.onsubmit=(ev)=>{
-    ev.preventdefault()
-    constformdata=newformdata(ev.target)
-}
-const bt =document.querySelector(".button-theme")
-const html =document.documentElement
-let theme = window.matchMedia("(prefers-color-sheme:dark")?"dark":"ligth"
 
-bt.addEventListener("click",()=> {
-    let newtheme=theme==="ligth" ?"dark" :"ligth"
-    setTheme(newtheme)
-    theme=newtheme
-
-}) 
-function setTheme(newtheme) {
-    html.setAttribute("data-theme",theme)
+    ev.preventDefault()
+    const formdata= new FormData(ev.target)
+    const vel=formdata.get("vel")
+    const timer=formdata.get("timer")
+    console.log(vel);
+    distancia.textContent= `distancia recorrida ${vel*timer}` 
+    console.log(distancia.textContent)
 }
-setTheme(theme)
