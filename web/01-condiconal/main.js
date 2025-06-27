@@ -1,6 +1,4 @@
-const d =document
-const $ = s => d.querySelector(s)
-const $$ = s => d.querySelectorAll(s)
+import { $,$$, d } from "./logger.js"
 
 const cl  = s=>console.log(s);
 
@@ -29,6 +27,16 @@ form.omsubmit =  (event) => {
 
 //sobre una lista de frutas 
 // usando la funcion forEach()
+function addFr(){
+    const sect = $ (".section")
+    fruit.forEach(el=>{
+        let p = d.createElement("p")
+        p.textContent=el
+        p.claslist.add("fruit")
+
+    })
+    
+}
 fruit.forEach((element,index) => {
     let p = d.createElement("p")
     p.textContent=element
