@@ -1,4 +1,4 @@
-import { d , $ } from "./logger";
+import { d , $ } from "./logger.js"
 const bt=$ ('.button-theme')
 const html=d.documentElement 
 //detecion  automatica de colores modo oscuro o claro" ( let theme )" 
@@ -10,8 +10,8 @@ bt.addEventListener('click',()=> {
     theme = newTheme 
 })
 
-function setTheme (newtheme){
+function setTheme (newTheme){
 
-    html.setAttribute( 'data-theme , newTheme ')
+    html.setAttribute( 'data-theme' , newTheme )
 }
 setTheme(theme)
