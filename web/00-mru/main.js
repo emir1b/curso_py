@@ -1,5 +1,13 @@
-import { $ } from "./logger.js"
+import { $, d } from "./logger.js"
 // definir variables
+const fruits = ["manzana","naranja"]
+const root =$('.root')
 
-const distancia =$(".par")
-console.log(distancia)
+fruits.foreach (el=>{
+    let p = d.createElement('p')
+    p.textcontent = el 
+    root.appendChil(p)
+
+})
+
+

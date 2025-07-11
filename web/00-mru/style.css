@@ -1,12 +1,11 @@
 :root[data-theme="ligth"]{
 
-        color:rgba(253, 0, 0, 0.801); 
-            background-color:rgb(8, 8, 8)#000000;
-            }
-            :root[data-theme="dark"]{
+    color:rgba(253, 0, 0, 0.801); 
+    background-color:rgb(8, 8, 8)#000000;
+} 
+               
+:root[data-theme="dark"]{   
+    background-color:rgb(179, 104, 104);
+    color:rgb(139, 26, 26); 
 
-                background-color:rgb(179, 104, 104);
-                    color:rgb(139, 26, 26); 
-                    }
-                    
 }
