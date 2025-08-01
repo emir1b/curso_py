@@ -105,7 +105,8 @@ document.addEventListener("keydown", ev => {
         }
     }
     if (ev.key === "Arrowup") {
-        const
+        const rotated = []
+        for (let i = 0; i < pise.shape[0].length;y++)
     }
 })
 update()
