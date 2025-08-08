@@ -1,0 +1,19 @@
+:root {
+    color-scheme: dark light;
+    color: #ffffffde;
+    background-color: #242424;
+
+
+}
+
+.header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter {
+    display: none;
+}
