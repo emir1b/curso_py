@@ -6,6 +6,8 @@
     <title>busqueda </title>
     <link rel="stylesheet" href="style.css">
     <script type="module" src="main.js"defer></script>
+    <script type="module" src="deleteUser.js"defer></script>
+    <script type="module" src="createUser.js"defer></script>
 </head>
 <body>
     <header class="header">
@@ -15,7 +17,32 @@
         </form>
     </header> 
     <main class="main">
-        <section class="main-section content-card"></section>
+        <section class="main-section content-formcreate">
+
+          <form class="form-create">
+              <label class="formlabel-name">nombre
+                  <input type="text" name="name" class="forminput-name">
+              </label>
+              <label class="formlabel-name">edad
+                  <input type="text" name="age" class="forminput-edad">
+              </label>
+              <button class="form-button-delete">crear</button>
+          </form>
+        </section>
+        <section class="main-section content-card">
+
+        </section>
+        <section class="main-section content-formdelete">
+            <form class="form-delete">
+                <label class="formlabel-name">nombre
+                    <input type="text" name="name" class="forminput-name">
+                </label>
+                <label class="formlabel-name">edad
+                    <input type="text" name="age" class="forminput-edad">
+                </label>
+                <button class="form-button-delete">borrar</button>
+            </form>
+        </section>
     </main>
     
 </body>

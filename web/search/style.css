@@ -17,3 +17,11 @@
 .filter {
     display: none;
 }
+
+.main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: ;
+    
+}

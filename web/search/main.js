@@ -1,19 +1,20 @@
 import data from "./data.js";
 
-const d  = document 
-const $ = s => d.querySelector(s)                                                                                                    
-const $$ = s => d.querySelectorAll(s)
+export const d  = document 
+export const $ = s => d.querySelector(s)                                                                                                    
+export const $$ = s => d.querySelectorAll(s)
 
 const formSearch = $(".form-search")
 const contentcard= $(".content-card")
 
 //funcion que crea una tabla con contenidpo dinamico
-function createtablet(){
+export function createtablet(){
     let tr = ""
     data.forEach(el => {
         tr += `
             <tr class="content-tablet">
                 <td>${el.name}</td>
+                <td>${el.age}</td>
             </tr>
         `
     })
@@ -37,7 +38,7 @@ function createtablet(){
 createtablet()
 
 //funcion que se encaargara de filtrar los elementos de la tabla 
-formSearch.addeventListener("submit", (ev) => {
+formSearch.addEventListener("submit", (ev) => {
      ev.preventDefault()
      const field = new FormData(ev.target)
      const search= field.get("search")
