@@ -3,6 +3,7 @@ import os
 
 def create_folder(name):
  path_folder= os.mkdir(name)
+
 root = tk.Tk()
 root.title("crear carpeta")
 root.geometry("350x350")
