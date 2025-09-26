@@ -28,10 +28,10 @@ val=[
 ]
 # insertar daros en la tabla students
 # cr.executemany(insert_query,val)
-cr.execute(insert_query)
+cr.execute("INSERT INTO students(name) VALUES ('jhon')")
 
 #mostrar los datos que se encuentran en la base de datos
-rows = cr.execute("SELECT  id, name FROM student").fetchall()
+rows = cr.execute("SELECT  id, name FROM students").fetchall()
 print (rows)  
 
 #guardar los cambioos en la base de datos 
