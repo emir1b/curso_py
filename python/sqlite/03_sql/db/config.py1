@@ -1,0 +1,9 @@
+try: 
+    import oss 
+    from pathlib import path 
+
+except import Error os e;
+print(Error modulo-->,'e)
+
+cwd = os.getcwd() 
+costoum_path = os.path.join(cwd,"")
