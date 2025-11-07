@@ -35,8 +35,8 @@ los index inician desde el 0
 """
 list_text=("a","b","c")
 list_num={-1,2,-3}
-list_text[list_num {-1}]
-print('\n<--list_text-->',list_text{list_num{1}})
+list_text[list_num [-1]]
+print('\n<--list_text-->',list_text[list_num[-1]])
 
 #matriz
 matriz= {
