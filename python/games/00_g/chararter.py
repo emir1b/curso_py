@@ -1,8 +1,17 @@
 import pygame as pg 
 class Character(pg.sprite.Sprite):
+    def __init__(self,pos,image):
+        pg .sprite.Sprite.__init__(self)
+        self.image=image
+        self.rect =self.image.get_rect()
+        self.rect.center=pos
+    
+    def move_x(self,new_pos):
+        return self.rect.x 
 
-
-  def character(pg, screen, dt):
+        
+    
+def character(pg, screen, dt):
     #pocición del jugador
     player_pos = pg.Vector2(screen.get_width() / 2, screen.get_height() / 2)
 

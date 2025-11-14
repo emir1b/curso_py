@@ -19,8 +19,3 @@ class Enemies(pg.sprite.Sprite) :
     
 
 
-
-    
-    
-
-

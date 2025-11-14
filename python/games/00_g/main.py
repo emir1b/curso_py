@@ -1,6 +1,8 @@
 # Example file showing a circle moving on screen
 import pygame as pg
 from enemy import Enemies
+from character import Character
+
 import os
 
 # pygame setup
@@ -12,9 +14,13 @@ dt = 0
 speed = 500
 
 enemies_image = pg.image.load(os.path.join("games/aset/enemies","tank_blue.png"))
+player= pg.image.load(os.path.join("games/aset/enemies","tank_blue.png"))
 enemi_group = pg.sprite.Group()
+#crear enemigo y agregar el grupo enemigo 
 enemi1 =Enemies((300,300),enemies_image )
 enemi_group.add(enemi1)
+#crear jugador o player 
+player=Character((150,150))
 
 
 # Posición del jugador 
