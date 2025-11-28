@@ -1,63 +1,84 @@
-# Example file showing a circle moving on screen
 import pygame as pg
 from enemy import Enemies
 from character import Character
-
 import os
+from turret import Turret
 
-# pygame setup
-pg.init()
-screen = pg.display.set_mode((1280, 720))
+cwd = os.getcwd()
+print(cwd)
+#crear la ventana del juego 
+pg.init() #inicializar la ventana
+#tamaño de la ventana 
+screen = pg.display.set_mode((800,720))
+ #tasa de frame 60
 clock = pg.time.Clock()
 run = True
 dt = 0
-speed = 500
 
-enemies_image = pg.image.load(os.path.join("games/aset/enemies","tank_blue.png"))
-player= pg.image.load(os.path.join("games/aset/enemies","tank_blue.png"))
-enemi_group = pg.sprite.Group()
-#crear enemigo y agregar el grupo enemigo 
-enemi1 =Enemies((300,300),enemies_image )
-enemi_group.add(enemi1)
-#crear jugador o player 
-player=Character((150,150))
+#cargar imagenes 
+player_image= pg.image.load(os.path.join(cwd, "pr/games/00_g/asset/enemies/enemy1.png"))
+enemy_image= pg.image.load(os.path.join(cwd, "pr/games/00_g/asset/enemies/enemy1.png"))
 
+#punto de recorido del enemigo
+weadpoints = [
+  (300,300),
+  (100,300),
+  (100,600),
+  (100,700),
+  (400,100),
+  (500,200),
+  (600,300),
+  (700,400),
+  (800,500),
+  (200,700)
+]
+#crear grupo de enemigos
+enemy_group = pg.sprite.Group()
+#crear enemigos
+enemy1 =Enemies (weadpoints[0] ,enemy_image)
 
-# Posición del jugador 
-player_pos = pg.Vector2(screen.get_width() / 2, screen.get_height() / 2)
+#agregar enemigos al grupo enemies
+enemy_group.add(enemy1)
+turret_group = pg.sprite.Group()
+player_group = pg.sprite.Group()
+#crear grupo player
 
+#crear players
+player1 =Character ((100,100),player_image)
+#agregar players al grupo enemies
+player_group.add(player1)
+delta=0
+speed=300
+while run :
 
-while run:
-   
-    # poll for events
-    # pg.QUIT event means the user clicked X to close your window
-    for event in pg.event.get():
-        if event.type == pg.QUIT:
-            run = False
+  screen.fill("gray") #color de fondo de la ventana
+  pg.draw.lines(screen,"blue",True,weadpoints)
+  enemy_group.update(speed*delta)
+  enemy_group.draw(screen)
+  player_group.draw(screen)
+  turret_group.draw(screen)
+  #renderizar el juego aqui
 
-    # fill the screen with a color to wipe away anything from last frame
-    screen.fill("purple")
-    enemi_group.update()
-    enemi_group.draw(screen)
+  keys = pg.key.get_pressed() #guardar la tecla precionada
+  # mover a la derecha
+  if keys[pg.K_d]: 
+    player1.move_right(speed*delta)
+  elif keys[pg.K_a]:
+    player1.move_left(speed*delta)
+  elif keys[pg.K_w]: 
+    player1.move_up(speed*delta)
+  elif keys[pg.K_s]:
+    player1.move_down(speed*delta)
 
-    pg.draw.circle(screen, "red", player_pos, 40)
+  delta = clock.tick(60) /1000
 
-    keys = pg.key.get_pressed() # Guardar la tecla precionada
-    if keys[pg.K_w] or keys[pg.K_UP]:
-        player_pos.y -= speed * dt
-    if keys[pg.K_s]  or keys[pg.K_DOWN]:
-        player_pos.y += speed * dt
-    if keys[pg.K_a]  or keys[pg.K_LEFT]:
-        player_pos.x -= speed * dt
-    if keys[pg.K_d]  or keys[pg.K_RIGHT]:
-        player_pos.x += speed * dt
-
-    # flip() the display to put your work on screen
-    pg.display.flip()
-
-    # limits FPS to 60
-    # dt is delta time in seconds since last frame, used for framerate-
-    # independent physics.
-    dt = clock.tick(60) / 1000
+  for event in pg.event.get():
+    if event.type == pg.QUIT:
+      run = False
+    
+  # inicializar la ventana
+  pg.display.flip()
+  #limitar los fps a 60 frames segundo
+  clock.tick(60) 
 
 pg.quit()
