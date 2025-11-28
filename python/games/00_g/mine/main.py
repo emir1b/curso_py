@@ -1,20 +1,14 @@
 try:
  import pygame as pg 
-
+ from enemy import Enemies
+ from character import Character
+ import os
+ from turret import Turret
 except ImportError as e :
     print("error al importar la libreri---<> ",e)
 
-#configuracion del board 
-columns=10
-rows=10
-mine=20
-
-def create_board():
-   for row in range(rows):
-      for col in range(columns):
-         for mi in range(mine):
-
-
+cwd = os.getcwd()
+print(cwd)
 #crear la ventana del juego 
 pg.init() #inicializar la ventana
 #tamaño de la ventana 
