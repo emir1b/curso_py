@@ -7,6 +7,15 @@ try:
 except ImportError as e :
     print("error al importar la libreri---<> ",e)
 
+# craar la plantilla del juego RootGame
+class RootGame:
+   def __init__(self)
+      self.pg = pg.init()
+      self.screem
+#distanciar la clase RootGame
+
+
+
 cwd = os.getcwd()
 print(cwd)
 #crear la ventana del juego 
